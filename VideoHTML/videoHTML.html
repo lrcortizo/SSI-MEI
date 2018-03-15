@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Video pantalla completa</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<style type="text/css">
+		video#videoid {
+			position: fixed;
+			right: 0;
+			bottom: 0;
+			min-width: 100%;
+			min-height: 100%;
+			width: auto;
+			height: auto;
+			z-index: -100;
+		}
+	</style>
+</head>
+
+<body>
+	<video autoplay loop id="videoid" controls>
+			<source src="Moto.webm" type="video/webm">
+			<source src="Moto.mp4" type="video/mp4">
+			<source src="Moto.ogg" type="video/ogg">
+	</video>
+</body>
+
+</html>
