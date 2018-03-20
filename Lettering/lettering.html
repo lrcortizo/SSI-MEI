@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Ejemplo Lettering</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  
+  <style type="text/css" media="screen">
+  body, html {
+      background: #ff0000;
+    }
+
+    .container{
+      text-align: center;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1 {
+      margin-top: 20%;
+    }
+    h1 [class*="word"]{
+      margin-right: 10px;
+    }
+    h1 [class*="word"]:last-child;{
+      margin-right: 0;
+    }
+    .text [class*="word"]{
+      font-family: sans-serif;
+      color: white;
+      font-weight: bold;
+      font-size: 60px;
+      line-height: 100%;
+      display: inline-block;
+      text-transform: uppercase;
+    }
+    .text:hover [class*="word"]:nth-child(5n+1){
+      -webkit-animation: color-1 5s infinite;
+      -moz-animation: color-1 5s infinite;
+      -o-animation: color-1 5s infinite;
+      animation: color-1 5s infinite;
+    }
+    .text:hover [class*="word"]:nth-child(5n+2){
+      -webkit-animation: color-2 5s infinite;
+      -moz-animation: color-2 5s infinite;
+      -o-animation: color-2 5s infinite;
+      animation: color-2 5s infinite;
+    }
+    .text:hover [class*="word"]:nth-child(5n+3){
+      -webkit-animation: color-3 5s infinite;
+      -moz-animation: color-3 5s infinite;
+      -o-animation: color-3 5s infinite;
+      animation: color-3 5s infinite;
+    }
+    .text:hover [class*="word"]:nth-child(5n+4){
+      -webkit-animation: color-4 5s infinite;
+      -moz-animation: color-4 5s infinite;
+      -o-animation: color-4 5s infinite;
+      animation: color-4 5s infinite;
+    }
+    .text:hover [class*="word"]:nth-child(5n+5){
+      -webkit-animation: color-5 5s infinite;
+      -moz-animation: color-5 5s infinite;
+      -o-animation: color-5 5s infinite;
+      animation: color-5 5s infinite;
+    }
+    @-webkit-keyframes color-1 {
+      0% { background: #ffffff; color: #ff0000; }
+      25% { background: #ff0000; color: #ffffff; }
+      50% { background: #ff0000; color: #ffffff; }
+      75% { background: #ff0000; color: #ffffff; }
+      100% { background: #ff0000; color: #ffffff; }
+    }
+    @-moz-keyframes color-1 {
+      0% { background: #ffffff; color: #ff0000; }
+      25% { background: #ff0000; color: #ffffff; }
+      50% { background: #ff0000; color: #ffffff; }
+      75% { background: #ff0000; color: #ffffff; }
+      100% { background: #ff0000; color: #ffffff; }
+    }
+    @-webkit-keyframes color-2 {
+      0% { background: #ff0000; color: #ffffff; }
+      25% { background: #ffffff; color: #ff0000; }
+      50% { background: #ff0000; color: #ffffff; }
+      75% { background: #ff0000; color: #ffffff; }
+      100% { background: #ff0000; color: #ffffff;}
+    }
+    @-moz-keyframes color-2 {
+      0% { background: #ff0000; color: #ffffff; }
+      25% { background: #ffffff; color: #ff0000; }
+      50% { background: #ff0000; color: #ffffff; }
+      75% { background: #ff0000; color: #ffffff; }
+      100% { background: #ff0000; color: #ffffff;}
+    }
+    @-webkit-keyframes color-3 {
+      0% { background: #ff0000; color: #ffffff; }
+      25% { background: #ff0000; color: #ffffff; }
+      50% { background: #ffffff; color: #ff0000; }
+      75% { background: #ff0000; color: #ffffff; }
+      100% { background: #ff0000; color: #ffffff;}
+    }
+    @-moz-keyframes color-3 {
+      0% { background: #ff0000; color: #ffffff; }
+      25% { background: #ff0000; color: #ffffff; }
+      50% { background: #ffffff; color: #ff0000; }
+      75% { background: #ff0000; color: #ffffff; }
+      100% { background: #ff0000; color: #ffffff;}
+    }
+    @-webkit-keyframes color-4 {
+      0% { background: #ff0000; color: #ffffff; }
+      25% { background: #ff0000; color: #ffffff; }
+      50% { background: #ff0000; color: #ffffff; }
+      75% { background: #ffffff; color: #ff0000; }
+      100% { background: #ff0000; color: #ffffff;}
+    }
+    @-moz-keyframes color-4 {
+      0% { background: #ff0000; color: #ffffff; }
+      25% { background: #ff0000; color: #ffffff; }
+      50% { background: #ff0000; color: #ffffff; }
+      75% { background: #ffffff; color: #ff0000; }
+      100% { background: #ff0000; color: #ffffff;}
+    }
+    @-webkit-keyframes color-5 {
+      0% { background: #ff0000; color: #ffffff; }
+      25% { background: #ff0000; color: #ffffff; }
+      50% { background: #ff0000; color: #ffffff; }
+      75% { background: #ff0000; color: #ffffff; }
+      100% { background: #ffffff; color: #ff0000;}
+    }
+    @-moz-keyframes color-5 {
+      0% { background: #ff0000; color: #ffffff; }
+      25% { background: #ff0000; color: #ffffff; }
+      50% { background: #ff0000; color: #ffffff; }
+      75% { background: #ff0000; color: #ffffff; }
+      100% { background: #ffffff; color: #ff0000;}
+    }
+  </style>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script src="jquery.lettering.js"></script>
+  <script>
+    $(document).ready(function() {
+      $(".text").lettering("words").children('span').lettering();
+    });
+  </script>
+
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="text">Servicios y Sistemas de Internet</h1>
+  </div>
+</body>
+
+</html>
