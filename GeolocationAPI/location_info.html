@@ -30,7 +30,13 @@
       }
 
       function getLocation() {
-        navigator.geolocation.getCurrentPosition(showData, showError);
+        //high precission, max time 20 sec, min time update 30 sec
+        var geoconfig = {
+          enableHighAccuracy: true,
+          timeout: 20000,
+          maximumAge: 30000
+        };
+        navigator.geolocation.getCurrentPosition(showData, showError, geoconfig);
       }
 
       function showData(pos) {
