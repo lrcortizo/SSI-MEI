@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>Location data</title>
+  <meta charset="utf-8">
+  <style type="text/css">
+    #getlocation {
+      background-color: rgb(65, 150, 172);
+      font-family: sans-serif;
+      font-weight: bold;
+      font-size: 16px;
+      border-radius: 5px;
+      height: 50px;
+      width: 10%;
+    }
+
+    #results {
+      font-family: sans-serif;
+      font-weight: bold;
+      font-size: 14px;
+    }
+  </style>
+  <script type="text/javascript">
+    if ("geolocation" in navigator) {
+
+      function initiate() {
+        var get = document.getElementById('getlocation');
+        get.addEventListener('click', getLocation);
+      }
+
+      function getLocation() {
+        navigator.geolocation.getCurrentPosition(showData);
+      }
+
+      function showData(pos) {
+        //Calculating date
+        var dateNow = new Date();
+        var day = dateNow.getDate();
+        var month = dateNow.getMonth() + 1;
+        var year = dateNow.getFullYear();
+        var hour = dateNow.getHours();
+        var min = dateNow.getMinutes();
+        var sec = dateNow.getSeconds();
+
+        if (day < 10) {
+          day = '0' + day
+        }
+
+        if (month < 10) {
+          month = '0' + month
+        }
+
+        dateNow = day + '/' + month + '/' + year + ' ' + hour + ':' + min + ':' + sec;
+
+        //location
+        latitude.innerHTML = pos.coords.latitude;
+        longitude.innerHTML = pos.coords.longitude;
+        accuracy.innerHTML = pos.coords.accuracy;
+        date.innerHTML = dateNow;
+      }
+      window.addEventListener('load', initiate);
+
+    } else {
+      alert("Geolocation is unvaliable in this navigator");
+    }
+  </script>
+</head>
+
+<body>
+  <section id="location">
+    <input type="button" id="getlocation" value="Get Location">
+    <table id="results">
+      <tr>
+        <td>Latitude:</td>
+        <td id="latitude"></td>
+      </tr>
+      <tr>
+        <td>Longitude:</td>
+        <td id="longitude"></td>
+      </tr>
+      <tr>
+        <td>Accuracy:</td>
+        <td id="accuracy"></td>
+      </tr>
+      <tr>
+        <td>Date:</td>
+        <td id="date"></td>
+      </tr>
+    </table>
+  </section>
+</body>
+
+</html>
