@@ -30,7 +30,7 @@
       }
 
       function getLocation() {
-        navigator.geolocation.getCurrentPosition(showData);
+        navigator.geolocation.getCurrentPosition(showData, showError);
       }
 
       function showData(pos) {
@@ -58,6 +58,10 @@
         longitude.innerHTML = pos.coords.longitude;
         accuracy.innerHTML = pos.coords.accuracy;
         date.innerHTML = dateNow;
+      }
+
+      function showError(error) {
+            alert('Error ' + error.code + ': ' + error.message);
       }
       window.addEventListener('load', initiate);
 
